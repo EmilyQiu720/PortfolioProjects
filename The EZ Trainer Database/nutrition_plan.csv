@@ -1,0 +1,31 @@
+diet_type,member_id,goal,duration (weeks),calories,protein (g),carbs (g),fat (g),employee_id
+Paleo,77,Weight Loss,5,1400,80,200,60,54
+Atkins,26,Weight Loss,12,1400,80,200,60,31
+Keto,70,Bulking,9,2300,150,300,90,83
+Mediterranean,36,Maintenance,8,1797,100,250,70,38
+Atkins,53,Maintenance,4,2300,100,250,70,15
+Paleo,100,Maintenance,15,2229,100,250,70,80
+Atkins,50,Weight Loss,14,1400,80,200,60,27
+Paleo,24,Weight Loss,10,1400,80,200,60,22
+Mediterranean,18,Weight Loss,4,1400,80,200,60,30
+Atkins,19,Maintenance,11,2300,100,250,70,17
+Keto,59,Maintenance,16,2300,100,250,70,12
+Paleo,78,Maintenance,9,2290,100,250,70,80
+Vegan,90,Weight Loss,8,1400,80,200,60,31
+Mediterranean,94,Maintenance,5,2034,100,250,70,94
+Vegan,51,Maintenance,11,2300,100,250,70,74
+Keto,56,Bulking,4,2396,150,300,90,27
+Paleo,50,Bulking,14,2300,150,300,90,62
+Atkins,85,Bulking,4,2300,150,300,90,19
+Mediterranean,29,Weight Loss,8,1400,80,200,60,24
+Mediterranean,63,Weight Loss,10,1246,80,200,60,83
+Paleo,42,Weight Loss,16,1248,80,200,60,24
+Keto,25,Maintenance,7,2300,100,250,70,88
+Paleo,25,Bulking,8,2300,150,300,90,92
+Keto,2,Bulking,6,2300,150,300,90,51
+Vegan,1,Maintenance,8,1400,100,250,70,41
+Mediterranean,92,Bulking,16,2300,150,300,90,1
+Paleo,55,Maintenance,5,2300,100,250,70,9
+Vegan,34,Weight Loss,7,1400,80,200,60,8
+Atkins,16,Weight Loss,16,1400,80,200,60,3
+Mediterranean,65,Weight Loss,10,1400,80,200,60,7
