@@ -4,6 +4,24 @@ This repository contains selected portfolio projects across machine learning, op
 
 ## Featured Project
 
+### Clinical Outcomes Causal Inference in R
+
+[`Clinical Outcomes Causal Inference in R`](./Clinical%20Outcomes%20Causal%20Inference%20in%20R) is a reproducible R analytics project for estimating treatment effects from non-randomized clinical outcome data.
+
+The project includes:
+
+- Synthetic clinical cohort generation with documented confounding structure
+- Data cleaning, validation, factor encoding, and derived clinical risk features
+- Baseline covariate balance diagnostics using standardized mean differences
+- Propensity score modeling, nearest-neighbor matching, and inverse probability weighting
+- Logistic regression outcome models for 30-day readmission
+- Cox proportional hazards models and Kaplan-Meier survival analysis
+- Quarto report for statistical communication
+- Shiny dashboard for stakeholder exploration
+- `targets` pipeline, `renv` dependency pattern, and `testthat` tests
+
+This project demonstrates senior R skills in statistical modeling, causal inference, survival analysis, reproducible research workflows, and production-quality analytical project structure.
+
 ### Payment Fraud SQL Intelligence Platform
 
 [`Payment Fraud SQL Intelligence Platform`](./Payment%20Fraud%20SQL%20Intelligence%20Platform) is a production-style PostgreSQL project for fraud monitoring, merchant risk analytics, chargeback investigation, data quality, governance, and query performance optimization.

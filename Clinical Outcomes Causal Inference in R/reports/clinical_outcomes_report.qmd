@@ -1,0 +1,113 @@
+---
+title: "Clinical Outcomes Causal Inference Report"
+author: "Emily Qiu"
+format:
+  html:
+    toc: true
+    number-sections: true
+execute:
+  warning: false
+  message: false
+---
+
+## Executive Summary
+
+This report estimates whether a non-randomized clinical treatment is associated with lower 30-day readmission and improved event-free survival. Because treatment assignment is confounded by baseline severity, comorbidity, prior utilization, and hospital site, the analysis uses propensity score matching, inverse probability weighting, adjusted regression, and survival modeling.
+
+The project is designed as a reproducible R workflow rather than a one-off notebook. The same functions are used by the `targets` pipeline, tests, report, and Shiny app.
+
+## Setup
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(broom)
+library(survival)
+library(MatchIt)
+
+source("../R/01_generate_data.R")
+source("../R/02_clean_data.R")
+source("../R/03_balance_checks.R")
+source("../R/04_propensity_score.R")
+source("../R/05_survival_analysis.R")
+source("../R/06_outcome_models.R")
+source("../R/07_visualizations.R")
+```
+
+## Data
+
+```{r}
+raw_data <- load_or_generate_clinical_data("../data/synthetic_clinical_outcomes.csv")
+clinical_data <- clean_clinical_outcomes(raw_data)
+
+dplyr::glimpse(clinical_data)
+```
+
+## Baseline Cohort Summary
+
+```{r}
+clinical_data |>
+  group_by(treatment) |>
+  summarise(
+    patients = n(),
+    mean_age = mean(age),
+    mean_severity = mean(baseline_severity),
+    mean_comorbidity = mean(comorbidity_index),
+    readmission_rate = mean(readmitted_30d),
+    event_rate = mean(event_observed),
+    .groups = "drop"
+  )
+```
+
+## Propensity Score Adjustment
+
+```{r}
+propensity_model <- fit_propensity_model(clinical_data)
+scored_data <- add_propensity_scores(clinical_data, propensity_model)
+matched_data <- create_matched_cohort(scored_data)
+weighted_data <- create_iptw_cohort(scored_data)
+
+unadjusted_balance <- calculate_balance_table(scored_data, "treatment")
+matched_balance <- calculate_balance_table(matched_data, "treatment")
+weighted_balance <- calculate_weighted_balance_table(weighted_data, "treatment", "iptw")
+
+plot_balance_comparison(unadjusted_balance, matched_balance, weighted_balance)
+```
+
+## Propensity Score Overlap
+
+```{r}
+plot_propensity_overlap(scored_data)
+```
+
+## Binary Outcome Models
+
+```{r}
+outcome_models <- fit_outcome_models(clinical_data, matched_data, weighted_data)
+tidy_outcome_results(outcome_models)
+```
+
+Interpretation: estimates below 1.0 indicate lower odds of 30-day readmission in the treated group relative to control.
+
+## Survival Analysis
+
+```{r}
+survival_models <- fit_survival_models(clinical_data, matched_data, weighted_data)
+tidy_survival_results(survival_models)
+```
+
+Interpretation: hazard ratios below 1.0 indicate lower event hazard in the treated group.
+
+## Kaplan-Meier Curve
+
+```{r}
+plot_kaplan_meier(clinical_data)
+```
+
+## Limitations
+
+- The dataset is synthetic and designed for portfolio demonstration.
+- Causal claims depend on no unmeasured confounding.
+- Propensity score methods improve balance on observed covariates only.
+- Small samples can produce unstable matched estimates.
+- A production study would require preregistered outcomes, clinical review, sensitivity analysis, and external validation.

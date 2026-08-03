@@ -1,0 +1,78 @@
+{
+  "R": {
+    "Version": "4.3.0",
+    "Repositories": [
+      {
+        "Name": "CRAN",
+        "URL": "https://cloud.r-project.org"
+      }
+    ]
+  },
+  "Packages": {
+    "broom": {
+      "Package": "broom",
+      "Version": "1.0.5",
+      "Source": "Repository"
+    },
+    "dplyr": {
+      "Package": "dplyr",
+      "Version": "1.1.4",
+      "Source": "Repository"
+    },
+    "ggplot2": {
+      "Package": "ggplot2",
+      "Version": "3.5.0",
+      "Source": "Repository"
+    },
+    "MatchIt": {
+      "Package": "MatchIt",
+      "Version": "4.5.5",
+      "Source": "Repository"
+    },
+    "readr": {
+      "Package": "readr",
+      "Version": "2.1.5",
+      "Source": "Repository"
+    },
+    "renv": {
+      "Package": "renv",
+      "Version": "1.0.7",
+      "Source": "Repository"
+    },
+    "shiny": {
+      "Package": "shiny",
+      "Version": "1.8.1",
+      "Source": "Repository"
+    },
+    "survival": {
+      "Package": "survival",
+      "Version": "3.5-8",
+      "Source": "Repository"
+    },
+    "targets": {
+      "Package": "targets",
+      "Version": "1.6.0",
+      "Source": "Repository"
+    },
+    "tarchetypes": {
+      "Package": "tarchetypes",
+      "Version": "0.9.0",
+      "Source": "Repository"
+    },
+    "testthat": {
+      "Package": "testthat",
+      "Version": "3.2.1",
+      "Source": "Repository"
+    },
+    "tibble": {
+      "Package": "tibble",
+      "Version": "3.2.1",
+      "Source": "Repository"
+    },
+    "quarto": {
+      "Package": "quarto",
+      "Version": "1.4.4",
+      "Source": "Repository"
+    }
+  }
+}
