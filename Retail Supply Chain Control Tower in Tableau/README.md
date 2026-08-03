@@ -77,6 +77,8 @@ Supports region to warehouse to SKU to order-level investigation.
 
 ## Tableau Public Workflow
 
+Published dashboard: [Retail Supply Chain Control Tower](https://public.tableau.com/app/profile/emily.qiu6817/viz/RetailSupplyChainControlTower/ExecutiveOverview?publish=yes)
+
 1. Open Tableau Public.
 2. Connect to `data/orders.csv`.
 3. Add `shipments.csv`, `inventory.csv`, `returns.csv`, and `warehouse_targets.csv`.
@@ -94,7 +96,7 @@ Tableau Public, Tableau calculated fields, CSV data modeling, Python synthetic d
 
 - Created a Tableau-ready retail operations dataset with validated order, shipment, inventory, return, and target tables.
 - Defined senior BI metrics such as on-time delivery rate, warehouse SLA gap, fill rate, gross margin, return rate, inventory days remaining, and stockout risk score.
-- Designed an executive control tower dashboard and drilldown workflow for supply chain leaders.
+- Published an executive control tower dashboard and drilldown workflow for supply chain leaders.
 - Packaged calculated fields, dashboard specifications, and build instructions for Tableau Public implementation.
 
 ## Dashboard Mockup
