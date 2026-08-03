@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: payment_fraud_sql_postgres
+    environment:
+      POSTGRES_DB: fraud_platform
+      POSTGRES_USER: fraud_admin
+      POSTGRES_PASSWORD: fraud_admin_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - payment_fraud_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fraud_admin -d fraud_platform"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  payment_fraud_pgdata:

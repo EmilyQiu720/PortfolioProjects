@@ -4,6 +4,22 @@ This repository contains selected portfolio projects across machine learning, op
 
 ## Featured Project
 
+### Payment Fraud SQL Intelligence Platform
+
+[`Payment Fraud SQL Intelligence Platform`](./Payment%20Fraud%20SQL%20Intelligence%20Platform) is a production-style PostgreSQL project for fraud monitoring, merchant risk analytics, chargeback investigation, data quality, governance, and query performance optimization.
+
+The project includes:
+
+- Normalized payment fraud schema covering customers, accounts, merchants, payment methods, devices, transactions, events, fraud alerts, manual reviews, chargebacks, and audit logs
+- PostgreSQL constraints, indexes, materialized views, masked analyst views, audit triggers, and role-based access examples
+- Fraud detection SQL for payment method velocity, device fan-out, country mismatch, high-risk transaction scoring, and review queue prioritization
+- Merchant risk, customer behavior, chargeback, and operations dashboard queries using CTEs, window functions, filtered aggregates, and ranking
+- Data quality tests for duplicate records, inconsistent relationships, invalid amounts, event ordering, and unresolved alerts
+- Transaction integrity tests for review decisions and chargeback workflows
+- Performance tuning examples with slow-query and optimized-query versions plus EXPLAIN guidance
+
+This project demonstrates senior SQL skills beyond basic querying: production data modeling, operational analytics, governance, reliability checks, and performance-aware query design.
+
 ### Agent Engineering Systems
 
 [`Agent Engineering Systems`](./Agent%20Engineering%20Systems) is a ten-project Python suite covering practical agent engineering from first principles through production and research workflows:
