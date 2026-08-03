@@ -1,0 +1,10 @@
+region,warehouse,target_on_time_rate,target_fill_rate,target_return_rate,target_gross_margin
+West,Seattle DC,0.88,0.94,0.075,0.38
+West,Los Angeles DC,0.84,0.94,0.075,0.38
+West,Denver DC,0.88,0.94,0.075,0.38
+Central,Dallas DC,0.88,0.94,0.075,0.38
+Central,Chicago DC,0.88,0.94,0.075,0.38
+Central,Minneapolis DC,0.88,0.94,0.075,0.38
+East,New Jersey DC,0.88,0.94,0.075,0.38
+East,Atlanta DC,0.88,0.94,0.075,0.38
+East,Miami DC,0.84,0.94,0.075,0.38

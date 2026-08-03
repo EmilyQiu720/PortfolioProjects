@@ -4,6 +4,22 @@ This repository contains selected portfolio projects across machine learning, op
 
 ## Featured Project
 
+### Retail Supply Chain Control Tower in Tableau
+
+[`Retail Supply Chain Control Tower in Tableau`](./Retail%20Supply%20Chain%20Control%20Tower%20in%20Tableau) is a Tableau-ready BI project for monitoring fulfillment SLA, warehouse bottlenecks, inventory stockout risk, return rates, and SKU profitability.
+
+The project includes:
+
+- Tableau-ready CSV datasets for orders, shipments, inventory, returns, and warehouse targets
+- Validated relationship model for order-to-shipment, order-to-return, warehouse target, and SKU inventory analysis
+- Calculated fields for revenue, gross margin, on-time delivery rate, return rate, fill rate, inventory days remaining, stockout risk score, and SLA gap
+- LOD-style Tableau calculations for warehouse-level and SKU-level performance
+- Parameter-driven metric selector and SLA threshold
+- Dashboard specification for Executive Overview, Fulfillment Performance, Inventory Risk, Returns & Profitability, and Drilldown pages
+- Step-by-step Tableau Public build guide and dashboard mockup
+
+This project demonstrates senior Tableau and BI skills: data modeling, KPI design, calculated fields, operational dashboard storytelling, drilldown workflows, and performance-aware dashboard planning.
+
 ### FP&A Scenario Planning Model in Excel
 
 [`FP&A Scenario Planning Model in Excel`](./FP%26A%20Scenario%20Planning%20Model%20in%20Excel) is an executive-ready SaaS financial planning workbook for revenue forecasting, scenario planning, cash runway, sensitivity analysis, and FP&A dashboard reporting.

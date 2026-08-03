@@ -1,0 +1,109 @@
+snapshot_date,region,warehouse,sku_id,category,product_name,on_hand_units,reorder_point,monthly_demand_units,inventory_value
+2026-06-30,West,Seattle DC,SKU-1001,Electronics,Noise-Canceling Headphones,26,25,39,2455.7
+2026-06-30,West,Seattle DC,SKU-1002,Electronics,Smart Home Hub,52,37,57,7147.4
+2026-06-30,West,Seattle DC,SKU-1003,Electronics,Portable Charger,94,26,41,5551.64
+2026-06-30,West,Seattle DC,SKU-1004,Home,Air Purifier,54,18,28,1281.96
+2026-06-30,West,Seattle DC,SKU-1005,Home,Bedding Set,43,24,37,3496.33
+2026-06-30,West,Seattle DC,SKU-1006,Home,Kitchen Organizer,70,22,35,3584.7
+2026-06-30,West,Seattle DC,SKU-1007,Apparel,Performance Jacket,61,24,37,10488.34
+2026-06-30,West,Seattle DC,SKU-1008,Apparel,Running Shoes,51,19,30,3014.61
+2026-06-30,West,Seattle DC,SKU-1009,Apparel,Travel Backpack,58,27,43,4720.04
+2026-06-30,West,Seattle DC,SKU-1010,Beauty,Skin Care Kit,104,30,47,15000.96
+2026-06-30,West,Seattle DC,SKU-1011,Beauty,Hair Dryer,84,29,45,1380.12
+2026-06-30,West,Seattle DC,SKU-1012,Beauty,Fragrance Set,63,19,30,4318.02
+2026-06-30,West,Los Angeles DC,SKU-1001,Electronics,Noise-Canceling Headphones,15,20,31,1416.75
+2026-06-30,West,Los Angeles DC,SKU-1002,Electronics,Smart Home Hub,39,18,28,5360.55
+2026-06-30,West,Los Angeles DC,SKU-1003,Electronics,Portable Charger,62,31,48,3661.72
+2026-06-30,West,Los Angeles DC,SKU-1004,Home,Air Purifier,65,27,42,1543.1
+2026-06-30,West,Los Angeles DC,SKU-1005,Home,Bedding Set,10,15,24,813.1
+2026-06-30,West,Los Angeles DC,SKU-1006,Home,Kitchen Organizer,48,37,57,2458.08
+2026-06-30,West,Los Angeles DC,SKU-1007,Apparel,Performance Jacket,51,14,23,8768.94
+2026-06-30,West,Los Angeles DC,SKU-1008,Apparel,Running Shoes,17,25,39,1004.87
+2026-06-30,West,Los Angeles DC,SKU-1009,Apparel,Travel Backpack,32,28,44,2604.16
+2026-06-30,West,Los Angeles DC,SKU-1010,Beauty,Skin Care Kit,83,26,40,11971.92
+2026-06-30,West,Los Angeles DC,SKU-1011,Beauty,Hair Dryer,10,17,27,164.3
+2026-06-30,West,Los Angeles DC,SKU-1012,Beauty,Fragrance Set,36,33,52,2467.44
+2026-06-30,West,Denver DC,SKU-1001,Electronics,Noise-Canceling Headphones,61,19,30,5761.45
+2026-06-30,West,Denver DC,SKU-1002,Electronics,Smart Home Hub,99,29,45,13607.55
+2026-06-30,West,Denver DC,SKU-1003,Electronics,Portable Charger,44,16,26,2598.64
+2026-06-30,West,Denver DC,SKU-1004,Home,Air Purifier,41,20,31,973.34
+2026-06-30,West,Denver DC,SKU-1005,Home,Bedding Set,103,29,46,8374.93
+2026-06-30,West,Denver DC,SKU-1006,Home,Kitchen Organizer,65,27,43,3328.65
+2026-06-30,West,Denver DC,SKU-1007,Apparel,Performance Jacket,19,26,41,3266.86
+2026-06-30,West,Denver DC,SKU-1008,Apparel,Running Shoes,12,22,35,709.32
+2026-06-30,West,Denver DC,SKU-1009,Apparel,Travel Backpack,51,26,40,4150.38
+2026-06-30,West,Denver DC,SKU-1010,Beauty,Skin Care Kit,83,41,64,11971.92
+2026-06-30,West,Denver DC,SKU-1011,Beauty,Hair Dryer,54,31,49,887.22
+2026-06-30,West,Denver DC,SKU-1012,Beauty,Fragrance Set,51,16,25,3495.54
+2026-06-30,Central,Dallas DC,SKU-1001,Electronics,Noise-Canceling Headphones,54,24,37,5100.3
+2026-06-30,Central,Dallas DC,SKU-1002,Electronics,Smart Home Hub,70,20,31,9621.5
+2026-06-30,Central,Dallas DC,SKU-1003,Electronics,Portable Charger,40,14,22,2362.4
+2026-06-30,Central,Dallas DC,SKU-1004,Home,Air Purifier,40,28,44,949.6
+2026-06-30,Central,Dallas DC,SKU-1005,Home,Bedding Set,42,16,25,3415.02
+2026-06-30,Central,Dallas DC,SKU-1006,Home,Kitchen Organizer,20,22,35,1024.2
+2026-06-30,Central,Dallas DC,SKU-1007,Apparel,Performance Jacket,36,26,41,6189.84
+2026-06-30,Central,Dallas DC,SKU-1008,Apparel,Running Shoes,43,15,24,2541.73
+2026-06-30,Central,Dallas DC,SKU-1009,Apparel,Travel Backpack,69,29,45,5615.22
+2026-06-30,Central,Dallas DC,SKU-1010,Beauty,Skin Care Kit,26,14,22,3750.24
+2026-06-30,Central,Dallas DC,SKU-1011,Beauty,Hair Dryer,22,22,34,361.46
+2026-06-30,Central,Dallas DC,SKU-1012,Beauty,Fragrance Set,32,14,23,2193.28
+2026-06-30,Central,Chicago DC,SKU-1001,Electronics,Noise-Canceling Headphones,76,21,33,7178.2
+2026-06-30,Central,Chicago DC,SKU-1002,Electronics,Smart Home Hub,82,27,42,11270.9
+2026-06-30,Central,Chicago DC,SKU-1003,Electronics,Portable Charger,68,22,34,4016.08
+2026-06-30,Central,Chicago DC,SKU-1004,Home,Air Purifier,38,15,24,902.12
+2026-06-30,Central,Chicago DC,SKU-1005,Home,Bedding Set,28,19,30,2276.68
+2026-06-30,Central,Chicago DC,SKU-1006,Home,Kitchen Organizer,46,14,22,2355.66
+2026-06-30,Central,Chicago DC,SKU-1007,Apparel,Performance Jacket,86,25,39,14786.84
+2026-06-30,Central,Chicago DC,SKU-1008,Apparel,Running Shoes,38,14,22,2246.18
+2026-06-30,Central,Chicago DC,SKU-1009,Apparel,Travel Backpack,28,27,42,2278.64
+2026-06-30,Central,Chicago DC,SKU-1010,Beauty,Skin Care Kit,27,23,36,3894.48
+2026-06-30,Central,Chicago DC,SKU-1011,Beauty,Hair Dryer,50,23,36,821.5
+2026-06-30,Central,Chicago DC,SKU-1012,Beauty,Fragrance Set,39,20,31,2673.06
+2026-06-30,Central,Minneapolis DC,SKU-1001,Electronics,Noise-Canceling Headphones,29,16,26,2739.05
+2026-06-30,Central,Minneapolis DC,SKU-1002,Electronics,Smart Home Hub,14,16,25,1924.3
+2026-06-30,Central,Minneapolis DC,SKU-1003,Electronics,Portable Charger,23,21,33,1358.38
+2026-06-30,Central,Minneapolis DC,SKU-1004,Home,Air Purifier,24,11,17,569.76
+2026-06-30,Central,Minneapolis DC,SKU-1005,Home,Bedding Set,24,18,28,1951.44
+2026-06-30,Central,Minneapolis DC,SKU-1006,Home,Kitchen Organizer,59,17,27,3021.39
+2026-06-30,Central,Minneapolis DC,SKU-1007,Apparel,Performance Jacket,32,22,35,5502.08
+2026-06-30,Central,Minneapolis DC,SKU-1008,Apparel,Running Shoes,69,34,53,4078.59
+2026-06-30,Central,Minneapolis DC,SKU-1009,Apparel,Travel Backpack,47,24,37,3824.86
+2026-06-30,Central,Minneapolis DC,SKU-1010,Beauty,Skin Care Kit,22,22,34,3173.28
+2026-06-30,Central,Minneapolis DC,SKU-1011,Beauty,Hair Dryer,19,14,23,312.17
+2026-06-30,Central,Minneapolis DC,SKU-1012,Beauty,Fragrance Set,35,14,22,2398.9
+2026-06-30,East,New Jersey DC,SKU-1001,Electronics,Noise-Canceling Headphones,37,27,42,3494.65
+2026-06-30,East,New Jersey DC,SKU-1002,Electronics,Smart Home Hub,21,20,31,2886.45
+2026-06-30,East,New Jersey DC,SKU-1003,Electronics,Portable Charger,44,30,47,2598.64
+2026-06-30,East,New Jersey DC,SKU-1004,Home,Air Purifier,93,27,43,2207.82
+2026-06-30,East,New Jersey DC,SKU-1005,Home,Bedding Set,43,19,30,3496.33
+2026-06-30,East,New Jersey DC,SKU-1006,Home,Kitchen Organizer,24,27,43,1229.04
+2026-06-30,East,New Jersey DC,SKU-1007,Apparel,Performance Jacket,23,29,45,3954.62
+2026-06-30,East,New Jersey DC,SKU-1008,Apparel,Running Shoes,92,28,44,5438.12
+2026-06-30,East,New Jersey DC,SKU-1009,Apparel,Travel Backpack,20,29,46,1627.6
+2026-06-30,East,New Jersey DC,SKU-1010,Beauty,Skin Care Kit,42,31,48,6058.08
+2026-06-30,East,New Jersey DC,SKU-1011,Beauty,Hair Dryer,68,21,33,1117.24
+2026-06-30,East,New Jersey DC,SKU-1012,Beauty,Fragrance Set,52,26,40,3564.08
+2026-06-30,East,Atlanta DC,SKU-1001,Electronics,Noise-Canceling Headphones,16,20,32,1511.2
+2026-06-30,East,Atlanta DC,SKU-1002,Electronics,Smart Home Hub,78,22,35,10721.1
+2026-06-30,East,Atlanta DC,SKU-1003,Electronics,Portable Charger,76,22,35,4488.56
+2026-06-30,East,Atlanta DC,SKU-1004,Home,Air Purifier,57,20,31,1353.18
+2026-06-30,East,Atlanta DC,SKU-1005,Home,Bedding Set,90,26,40,7317.9
+2026-06-30,East,Atlanta DC,SKU-1006,Home,Kitchen Organizer,26,27,42,1331.46
+2026-06-30,East,Atlanta DC,SKU-1007,Apparel,Performance Jacket,81,30,47,13927.14
+2026-06-30,East,Atlanta DC,SKU-1008,Apparel,Running Shoes,88,28,44,5201.68
+2026-06-30,East,Atlanta DC,SKU-1009,Apparel,Travel Backpack,49,25,39,3987.62
+2026-06-30,East,Atlanta DC,SKU-1010,Beauty,Skin Care Kit,19,34,53,2740.56
+2026-06-30,East,Atlanta DC,SKU-1011,Beauty,Hair Dryer,30,35,54,492.9
+2026-06-30,East,Atlanta DC,SKU-1012,Beauty,Fragrance Set,73,31,49,5003.42
+2026-06-30,East,Miami DC,SKU-1001,Electronics,Noise-Canceling Headphones,45,20,31,4250.25
+2026-06-30,East,Miami DC,SKU-1002,Electronics,Smart Home Hub,60,16,26,8247.0
+2026-06-30,East,Miami DC,SKU-1003,Electronics,Portable Charger,28,29,45,1653.68
+2026-06-30,East,Miami DC,SKU-1004,Home,Air Purifier,68,24,38,1614.32
+2026-06-30,East,Miami DC,SKU-1005,Home,Bedding Set,100,29,45,8131.0
+2026-06-30,East,Miami DC,SKU-1006,Home,Kitchen Organizer,40,18,29,2048.4
+2026-06-30,East,Miami DC,SKU-1007,Apparel,Performance Jacket,76,32,50,13067.44
+2026-06-30,East,Miami DC,SKU-1008,Apparel,Running Shoes,63,22,34,3723.93
+2026-06-30,East,Miami DC,SKU-1009,Apparel,Travel Backpack,82,31,49,6673.16
+2026-06-30,East,Miami DC,SKU-1010,Beauty,Skin Care Kit,40,23,36,5769.6
+2026-06-30,East,Miami DC,SKU-1011,Beauty,Hair Dryer,53,17,27,870.79
+2026-06-30,East,Miami DC,SKU-1012,Beauty,Fragrance Set,15,20,32,1028.1
