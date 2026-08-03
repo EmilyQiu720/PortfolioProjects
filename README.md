@@ -4,6 +4,23 @@ This repository contains selected portfolio projects across machine learning, op
 
 ## Featured Project
 
+### FP&A Scenario Planning Model in Excel
+
+[`FP&A Scenario Planning Model in Excel`](./FP%26A%20Scenario%20Planning%20Model%20in%20Excel) is an executive-ready SaaS financial planning workbook for revenue forecasting, scenario planning, cash runway, sensitivity analysis, and FP&A dashboard reporting.
+
+The project includes:
+
+- 24-month SaaS revenue forecast driven by customers, ARPA, churn, expansion, and new logos
+- Base, Upside, and Downside scenario selector with active assumption lookup
+- Hiring plan integration for headcount and payroll forecasting
+- Expense forecast, cash flow roll-forward, burn rate, and runway calculation
+- Sensitivity analysis for growth and churn assumptions
+- Executive dashboard with KPI cards and native Excel charts
+- Validation checks for scenario selection, assumption completeness, customer roll-forward, cash roll-forward, and negative cash flags
+- Reproducible workbook generation from CSV inputs using a JavaScript builder
+
+This project demonstrates senior Excel and FP&A skills: auditable model structure, formula-driven forecasting, scenario controls, financial dashboard design, validation checks, and reproducible spreadsheet automation.
+
 ### Clinical Outcomes Causal Inference in R
 
 [`Clinical Outcomes Causal Inference in R`](./Clinical%20Outcomes%20Causal%20Inference%20in%20R) is a reproducible R analytics project for estimating treatment effects from non-randomized clinical outcome data.

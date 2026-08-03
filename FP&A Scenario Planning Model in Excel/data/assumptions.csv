@@ -1,0 +1,4 @@
+Scenario,Starting_Cash,Starting_Customers,Starting_ARPA,Monthly_New_Customers,Monthly_Churn,Monthly_Expansion,ARPA_Growth,Gross_Margin,CAC_Per_Customer,Base_Payroll_Per_FTE,NonPayroll_Opex,Sales_Marketing_Budget
+Base,20000000,820,940,42,0.028,0.012,0.006,0.780,1850,14500,215000,140000
+Upside,20000000,820,940,58,0.020,0.018,0.010,0.810,1700,14500,245000,175000
+Downside,20000000,820,940,28,0.042,0.006,0.002,0.740,2200,14500,195000,105000
