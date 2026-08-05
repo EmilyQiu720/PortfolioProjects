@@ -1,0 +1,25 @@
+provider_id,provider_name,department_id,specialty
+P011,Emergency Provider 1,D001,Emergency Physician
+P012,Emergency Provider 2,D001,Emergency Physician
+P013,Emergency Provider 3,D001,Emergency Physician
+P021,Cardiology Provider 1,D002,Cardiologist
+P022,Cardiology Provider 2,D002,Cardiologist
+P023,Cardiology Provider 3,D002,Cardiologist
+P031,Orthopedics Provider 1,D003,Orthopedic Surgeon
+P032,Orthopedics Provider 2,D003,Orthopedic Surgeon
+P033,Orthopedics Provider 3,D003,Orthopedic Surgeon
+P041,Primary Provider 1,D004,Primary Care Physician
+P042,Primary Provider 2,D004,Primary Care Physician
+P043,Primary Provider 3,D004,Primary Care Physician
+P051,Oncology Provider 1,D005,Oncologist
+P052,Oncology Provider 2,D005,Oncologist
+P053,Oncology Provider 3,D005,Oncologist
+P061,Radiology Provider 1,D006,Radiologist
+P062,Radiology Provider 2,D006,Radiologist
+P063,Radiology Provider 3,D006,Radiologist
+P071,Gastroenterology Provider 1,D007,Gastroenterologist
+P072,Gastroenterology Provider 2,D007,Gastroenterologist
+P073,Gastroenterology Provider 3,D007,Gastroenterologist
+P081,Pediatrics Provider 1,D008,Pediatrician
+P082,Pediatrics Provider 2,D008,Pediatrician
+P083,Pediatrics Provider 3,D008,Pediatrician

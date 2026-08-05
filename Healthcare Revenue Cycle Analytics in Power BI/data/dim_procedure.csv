@@ -1,0 +1,11 @@
+procedure_id,procedure_code,procedure_group,description,base_charge,complexity
+PR001,99213,Evaluation,Established patient visit,185,Low
+PR002,99285,Emergency,Emergency department high severity,1450,High
+PR003,93000,Cardiology,Electrocardiogram,240,Low
+PR004,93306,Cardiology,Transthoracic echocardiography,1450,Medium
+PR005,27447,Orthopedics,Total knee arthroplasty,23800,High
+PR006,73721,Radiology,MRI lower extremity,2600,Medium
+PR007,45378,Gastroenterology,Diagnostic colonoscopy,3900,Medium
+PR008,96413,Oncology,Chemotherapy infusion,6800,High
+PR009,71046,Radiology,Chest x-ray,310,Low
+PR010,99392,Pediatrics,Preventive medicine visit,210,Low

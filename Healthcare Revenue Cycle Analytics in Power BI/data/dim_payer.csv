@@ -1,0 +1,7 @@
+payer_id,payer_name,payer_type,base_denial_rate,lag_mean
+PY001,Blue Horizon Health,Commercial,0.075,24
+PY002,United Regional Plan,Commercial,0.092,31
+PY003,Medicare Advantage Plus,Medicare Advantage,0.118,38
+PY004,State Medicaid,Medicaid,0.162,47
+PY005,Aetna Choice,Commercial,0.086,28
+PY006,Self Pay,Self Pay,0.21,62

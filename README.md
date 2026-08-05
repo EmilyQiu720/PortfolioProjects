@@ -20,6 +20,22 @@ The project includes:
 
 This project demonstrates senior Tableau and BI skills: data modeling, KPI design, calculated fields, operational dashboard storytelling, drilldown workflows, and performance-aware dashboard planning.
 
+### Healthcare Revenue Cycle Analytics in Power BI
+
+[`Healthcare Revenue Cycle Analytics in Power BI`](./Healthcare%20Revenue%20Cycle%20Analytics%20in%20Power%20BI) is a Power BI-ready semantic modeling project for healthcare finance, denial management, accounts receivable aging, payer performance, and department-level revenue cycle operations.
+
+The project includes:
+
+- Synthetic star-schema datasets for claims, payments, denials, AR snapshots, and conformed dimensions
+- Power BI relationship model with claims as the central operational grain
+- DAX measure layer for net revenue, collection rate, denial rate, clean claim rate, days in AR, AR over 90 days, reimbursement lag, write-off rate, and payer mix
+- Power Query cleanup guidance and data type mapping
+- Row-level security design for regional finance and department manager access
+- Dashboard specification for executive overview, denials root cause, AR aging, provider performance, and claim drillthrough pages
+- Python validation checks for keys, relationships, money fields, denial rate, and payment activity
+
+This project demonstrates senior Power BI skills: star schema design, semantic modeling, DAX, time intelligence, RLS, drillthrough design, healthcare revenue cycle analytics, and governed dashboard delivery.
+
 ### FP&A Scenario Planning Model in Excel
 
 [`FP&A Scenario Planning Model in Excel`](./FP%26A%20Scenario%20Planning%20Model%20in%20Excel) is an executive-ready SaaS financial planning workbook for revenue forecasting, scenario planning, cash runway, sensitivity analysis, and FP&A dashboard reporting.

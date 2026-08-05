@@ -1,0 +1,9 @@
+department_id,department_name,service_line,region
+D001,Emergency Medicine,Acute Care,East
+D002,Cardiology,Specialty Care,East
+D003,Orthopedics,Surgical Care,Central
+D004,Primary Care,Ambulatory Care,Central
+D005,Oncology,Specialty Care,West
+D006,Radiology,Diagnostics,West
+D007,Gastroenterology,Procedural Care,Central
+D008,Pediatrics,Ambulatory Care,East

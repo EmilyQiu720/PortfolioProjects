@@ -1,0 +1,9 @@
+denial_reason_id,denial_reason,denial_category,preventable_default
+DR001,Missing prior authorization,Authorization,1
+DR002,Eligibility inactive,Eligibility,1
+DR003,Medical necessity not supported,Clinical Documentation,1
+DR004,Coding mismatch,Coding,1
+DR005,Duplicate claim,Billing Process,1
+DR006,Coordination of benefits,Payer Policy,0
+DR007,Timely filing exceeded,Billing Process,1
+DR008,Bundled service,Payer Policy,0
