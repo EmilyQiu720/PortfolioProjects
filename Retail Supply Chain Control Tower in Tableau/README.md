@@ -51,6 +51,7 @@ Retail Supply Chain Control Tower in Tableau/
     methodology.md
   outputs/
     dashboard_mockup.svg
+    dashboard_actual.jpg
 ```
 
 ## Dashboard Pages
@@ -99,6 +100,6 @@ Tableau Public, Tableau calculated fields, CSV data modeling, Python synthetic d
 - Published an executive control tower dashboard and drilldown workflow for supply chain leaders.
 - Packaged calculated fields, dashboard specifications, and build instructions for Tableau Public implementation.
 
-## Dashboard Mockup
+## Dashboard Screenshot
 
-![Dashboard mockup](outputs/dashboard_mockup.svg)
+![Published Tableau dashboard screenshot](outputs/dashboard_actual.jpg)
