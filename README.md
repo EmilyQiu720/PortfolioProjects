@@ -36,6 +36,24 @@ The project includes:
 
 This project demonstrates senior Power BI skills: star schema design, semantic modeling, DAX, time intelligence, RLS, drillthrough design, healthcare revenue cycle analytics, and governed dashboard delivery.
 
+### Production ML Risk Scoring API
+
+[`Production ML Risk Scoring API`](./Production%20ML%20Risk%20Scoring%20API) is a production-style machine learning backend for real-time transaction risk scoring, batch scoring, prediction logging, model registry metadata, and drift monitoring.
+
+The project includes:
+
+- FastAPI service with `/health`, `/v1/score`, `/v1/batch-score`, and `/v1/prediction-summary` endpoints
+- Pydantic request/response schemas for strict feature contract enforcement
+- Deterministic model artifact loaded from a versioned model registry
+- Shared feature transformation layer for online scoring, batch scoring, and tests
+- Decision policy for approve, manual review, and decline routing
+- SQLite prediction log with masked customer identifiers for auditability
+- Batch scoring CLI and sample scoring input
+- Drift monitoring utilities using Population Stability Index
+- Docker, Docker Compose, environment configuration, docs, and unit tests
+
+This project demonstrates senior MLE/backend skills: model serving, API design, schema validation, prediction logging, model versioning, batch inference, drift monitoring, auth, Docker packaging, and testable service architecture.
+
 ### FP&A Scenario Planning Model in Excel
 
 [`FP&A Scenario Planning Model in Excel`](./FP%26A%20Scenario%20Planning%20Model%20in%20Excel) is an executive-ready SaaS financial planning workbook for revenue forecasting, scenario planning, cash runway, sensitivity analysis, and FP&A dashboard reporting.

@@ -1,0 +1,14 @@
+services:
+  risk-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      APP_ENV: docker
+      API_KEY: dev-local-key
+      DATABASE_PATH: /app/data/prediction_log.sqlite
+      MODEL_REGISTRY_PATH: /app/artifacts/model_registry.json
+      ENABLE_CACHE: "false"
+    volumes:
+      - ./data:/app/data
+

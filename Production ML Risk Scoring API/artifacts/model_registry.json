@@ -1,0 +1,43 @@
+{
+  "active_version": "risk-logit-2026-08-05",
+  "models": {
+    "risk-logit-2026-08-05": {
+      "model_name": "transaction_risk_logistic_baseline",
+      "model_version": "risk-logit-2026-08-05",
+      "training_dataset": "synthetic_transaction_risk_v1",
+      "registered_at": "2026-08-05T00:00:00Z",
+      "owner": "risk-platform",
+      "coefficients": {
+        "bias": -5.1,
+        "log_order_amount": 0.31,
+        "log_shipping_distance": 0.14,
+        "new_account": 0.85,
+        "mature_account": -0.42,
+        "chargeback_count": 0.78,
+        "failed_payment_attempts": 0.45,
+        "low_device_age": 0.72,
+        "low_email_domain_age": 0.38,
+        "ip_risk_score": 2.4,
+        "velocity_score": 2.1,
+        "billing_shipping_mismatch": 0.95,
+        "high_transaction_velocity": 0.63,
+        "segment_small_business": -0.08,
+        "segment_enterprise": -0.18,
+        "channel_mobile": 0.18,
+        "channel_partner_api": -0.12,
+        "channel_call_center": 0.22
+      },
+      "thresholds": {
+        "manual_review": 0.42,
+        "decline": 0.78
+      },
+      "training_metrics": {
+        "roc_auc": 0.913,
+        "average_precision": 0.684,
+        "brier_score": 0.071,
+        "precision_at_review_threshold": 0.62,
+        "recall_at_review_threshold": 0.81
+      }
+    }
+  }
+}

@@ -1,2 +1,4 @@
 __pycache__/
 *.pyc
+*.sqlite
+Production ML Risk Scoring API/data/batch_scoring_output.csv
