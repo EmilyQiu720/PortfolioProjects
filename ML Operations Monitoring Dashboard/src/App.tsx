@@ -11,26 +11,13 @@ import { decisionMetrics, driftMetrics, kpis, modelMetadata, predictionLogs, tim
 export function App() {
   return (
     <div className="app-shell">
-      <aside className="sidebar">
-        <div className="brand">
-          <Activity size={23} />
-          <div>
-            <strong>RiskOps</strong>
-            <span>ML Monitoring</span>
-          </div>
-        </div>
-        <nav>
-          <a className="active" href="#overview">Overview</a>
-          <a href="#predictions">Predictions</a>
-          <a href="#drift">Feature Drift</a>
-          <a href="#registry">Model Registry</a>
-          <a href="#probe">Scoring Probe</a>
-        </nav>
-      </aside>
-
       <main>
         <header className="topbar">
           <div>
+            <div className="brand-lockup">
+              <Activity size={18} />
+              <span>RiskOps ML Monitoring</span>
+            </div>
             <h1>ML Operations Monitoring Dashboard</h1>
             <p>Production risk model health, decisions, drift, and prediction audit trail</p>
           </div>
