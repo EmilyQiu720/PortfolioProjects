@@ -54,6 +54,22 @@ The project includes:
 
 This project demonstrates senior MLE/backend skills: model serving, API design, schema validation, prediction logging, model versioning, batch inference, drift monitoring, auth, Docker packaging, and testable service architecture.
 
+### ML Operations Monitoring Dashboard
+
+[`ML Operations Monitoring Dashboard`](./ML%20Operations%20Monitoring%20Dashboard) is a React and TypeScript frontend for monitoring the `Production ML Risk Scoring API`.
+
+The project includes:
+
+- Vite React app with TypeScript and componentized dashboard architecture
+- Operational UI for p95 latency, approval rate, manual review rate, decline rate, and drift alerts
+- SVG-based request volume and latency chart
+- Decision distribution, feature drift, model registry, and prediction log panels
+- Live scoring probe that calls the backend `/v1/score` endpoint
+- Responsive layout, polished enterprise dashboard styling, and API integration docs
+- Product requirements, frontend architecture notes, and backend integration mapping
+
+This project demonstrates frontend skills for ML products: React components, TypeScript contracts, API integration, dashboard UX, responsive layout, data visualization, and operational monitoring workflows.
+
 ### FP&A Scenario Planning Model in Excel
 
 [`FP&A Scenario Planning Model in Excel`](./FP%26A%20Scenario%20Planning%20Model%20in%20Excel) is an executive-ready SaaS financial planning workbook for revenue forecasting, scenario planning, cash runway, sensitivity analysis, and FP&A dashboard reporting.

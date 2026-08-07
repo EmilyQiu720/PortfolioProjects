@@ -2,3 +2,8 @@ __pycache__/
 *.pyc
 *.sqlite
 Production ML Risk Scoring API/data/batch_scoring_output.csv
+node_modules/
+dist/
+ML Operations Monitoring Dashboard/node_modules/
+ML Operations Monitoring Dashboard/dist/
+ML Operations Monitoring Dashboard/dev-server*.log
