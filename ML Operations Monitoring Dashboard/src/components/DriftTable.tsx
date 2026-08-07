@@ -7,7 +7,7 @@ type Props = {
 
 export function DriftTable({ rows }: Props) {
   return (
-    <section className="panel">
+    <section className="panel" id="drift">
       <div className="panel-heading">
         <div>
           <h2>Feature Drift Monitor</h2>

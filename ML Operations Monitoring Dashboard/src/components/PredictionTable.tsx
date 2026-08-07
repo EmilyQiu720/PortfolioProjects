@@ -7,7 +7,7 @@ type Props = {
 
 export function PredictionTable({ rows }: Props) {
   return (
-    <section className="panel wide-panel">
+    <section className="panel wide-panel" id="predictions">
       <div className="panel-heading">
         <div>
           <h2>Prediction Log Audit</h2>

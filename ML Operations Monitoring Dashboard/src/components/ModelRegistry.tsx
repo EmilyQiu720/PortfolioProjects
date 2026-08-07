@@ -7,7 +7,7 @@ type Props = {
 
 export function ModelRegistry({ metadata }: Props) {
   return (
-    <section className="panel registry-panel">
+    <section className="panel registry-panel" id="registry">
       <div className="panel-heading">
         <div>
           <h2>Model Registry</h2>

@@ -44,7 +44,7 @@ export function ScoreConsole() {
   }
 
   return (
-    <section className="panel score-console">
+    <section className="panel score-console" id="probe">
       <div className="panel-heading">
         <div>
           <h2>Live Scoring Probe</h2>
