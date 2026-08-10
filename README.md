@@ -36,11 +36,20 @@ The project includes:
 
 This project demonstrates senior Power BI skills: star schema design, semantic modeling, DAX, time intelligence, RLS, drillthrough design, healthcare revenue cycle analytics, and governed dashboard delivery.
 
-### Production ML Risk Scoring API
+### Full-Stack ML Risk Platform
 
-[`Production ML Risk Scoring API`](./Production%20ML%20Risk%20Scoring%20API) is a production-style machine learning backend for real-time transaction risk scoring, batch scoring, prediction logging, model registry metadata, and drift monitoring.
+This system combines a backend ML serving project and a frontend monitoring project:
 
-The project includes:
+**Backend:** [`Production ML Risk Scoring API`](./Production%20ML%20Risk%20Scoring%20API)  
+**Frontend:** [`ML Operations Monitoring Dashboard`](./ML%20Operations%20Monitoring%20Dashboard)
+
+Together, they demonstrate a full-stack ML product path: model artifact, feature contract, versioned scoring API, persistent prediction logs, drift utilities, operational monitoring UI, and a live scoring probe.
+
+#### Backend: Production ML Risk Scoring API
+
+The backend is a production-style machine learning service for real-time transaction risk scoring, batch scoring, prediction logging, model registry metadata, and drift monitoring.
+
+It includes:
 
 - FastAPI service with `/health`, `/v1/score`, `/v1/batch-score`, and `/v1/prediction-summary` endpoints
 - Pydantic request/response schemas for strict feature contract enforcement
@@ -54,11 +63,11 @@ The project includes:
 
 This project demonstrates senior MLE/backend skills: model serving, API design, schema validation, prediction logging, model versioning, batch inference, drift monitoring, auth, Docker packaging, and testable service architecture.
 
-### ML Operations Monitoring Dashboard
+#### Frontend: ML Operations Monitoring Dashboard
 
-[`ML Operations Monitoring Dashboard`](./ML%20Operations%20Monitoring%20Dashboard) is a React and TypeScript frontend for monitoring the `Production ML Risk Scoring API`.
+The frontend is a React and TypeScript operations console for monitoring the `Production ML Risk Scoring API`.
 
-The project includes:
+It includes:
 
 - Vite React app with TypeScript and componentized dashboard architecture
 - Operational UI for p95 latency, approval rate, manual review rate, decline rate, and drift alerts
