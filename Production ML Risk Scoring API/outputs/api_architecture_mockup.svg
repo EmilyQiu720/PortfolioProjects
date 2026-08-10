@@ -1,106 +1,9 @@
-"""Generate model registry, sample feature data, and portfolio mockup."""
-
-from __future__ import annotations
-
-import csv
-import json
-import random
-from pathlib import Path
-
-
-ROOT = Path(__file__).resolve().parents[1]
-RNG = random.Random(720)
-
-
-def risk_record(index: int, high_risk: bool = False) -> dict[str, object]:
-    amount = RNG.uniform(250, 1800) if not high_risk else RNG.uniform(1800, 9000)
-    chargebacks = RNG.choice([0, 0, 0, 1]) if not high_risk else RNG.choice([1, 2, 3, 4])
-    failed = RNG.choice([0, 0, 1, 2]) if not high_risk else RNG.choice([3, 4, 5, 7])
-    account_age = RNG.randint(180, 1800) if not high_risk else RNG.randint(0, 45)
-    device_age = RNG.randint(60, 1100) if not high_risk else RNG.randint(0, 10)
-    email_age = RNG.randint(120, 2500) if not high_risk else RNG.randint(0, 45)
-    return {
-        "request_id": f"REQ-{index:08d}",
-        "customer_id": f"CUST-{RNG.randint(10000, 99999)}",
-        "customer_segment": RNG.choice(["consumer", "small_business", "enterprise"]),
-        "channel": RNG.choice(["web", "mobile", "partner_api", "call_center"]),
-        "account_age_days": account_age,
-        "prior_transactions_30d": RNG.randint(1, 18) if not high_risk else RNG.randint(20, 55),
-        "prior_chargebacks_180d": chargebacks,
-        "failed_payment_attempts_24h": failed,
-        "order_amount": round(amount, 2),
-        "shipping_distance_km": round(RNG.uniform(5, 350) if not high_risk else RNG.uniform(450, 4200), 1),
-        "device_age_days": device_age,
-        "email_domain_age_days": email_age,
-        "ip_risk_score": round(RNG.uniform(0.05, 0.35) if not high_risk else RNG.uniform(0.55, 0.98), 3),
-        "billing_shipping_match": RNG.random() > (0.12 if not high_risk else 0.72),
-        "velocity_score": round(RNG.uniform(0.03, 0.45) if not high_risk else RNG.uniform(0.65, 0.99), 3),
-    }
-
-
-def write_csv(path: Path, rows: list[dict[str, object]]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()))
-        writer.writeheader()
-        writer.writerows(rows)
-
-
-def build_model_registry() -> None:
-    payload = {
-        "active_version": "risk-logit-2026-08-05",
-        "models": {
-            "risk-logit-2026-08-05": {
-                "model_name": "transaction_risk_logistic_baseline",
-                "model_version": "risk-logit-2026-08-05",
-                "training_dataset": "synthetic_transaction_risk_v1",
-                "registered_at": "2026-08-05T00:00:00Z",
-                "owner": "risk-platform",
-                "coefficients": {
-                    "bias": -5.1,
-                    "log_order_amount": 0.31,
-                    "log_shipping_distance": 0.14,
-                    "new_account": 0.85,
-                    "mature_account": -0.42,
-                    "chargeback_count": 0.78,
-                    "failed_payment_attempts": 0.45,
-                    "low_device_age": 0.72,
-                    "low_email_domain_age": 0.38,
-                    "ip_risk_score": 2.4,
-                    "velocity_score": 2.1,
-                    "billing_shipping_mismatch": 0.95,
-                    "high_transaction_velocity": 0.63,
-                    "segment_small_business": -0.08,
-                    "segment_enterprise": -0.18,
-                    "channel_mobile": 0.18,
-                    "channel_partner_api": -0.12,
-                    "channel_call_center": 0.22,
-                },
-                "thresholds": {
-                    "manual_review": 0.42,
-                    "decline": 0.78
-                },
-                "training_metrics": {
-                    "roc_auc": 0.913,
-                    "average_precision": 0.684,
-                    "brier_score": 0.071,
-                    "precision_at_review_threshold": 0.62,
-                    "recall_at_review_threshold": 0.81
-                }
-            }
-        }
-    }
-    target = ROOT / "artifacts" / "model_registry.json"
-    target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(json.dumps(payload, indent=2), encoding="utf-8")
-
-
-def build_mockup() -> None:
-    svg = """<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
   <rect width="1600" height="900" fill="#eef3f8"/>
   <rect x="0" y="0" width="1600" height="112" fill="#0f172a"/>
   <text x="44" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="35" font-weight="700" fill="#ffffff">Production ML Risk Scoring API</text>
   <text x="44" y="82" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#cbd5e1">FastAPI model-serving backend with strict contracts, authenticated scoring, durable logs, and drift utilities</text>
+
   <g font-family="Segoe UI, Arial, sans-serif">
     <rect x="44" y="144" width="1512" height="92" rx="8" fill="#ffffff" stroke="#d7e0ea"/>
     <text x="72" y="180" font-size="18" font-weight="700" fill="#475569">Runtime Contracts</text>
@@ -110,68 +13,64 @@ def build_mockup() -> None:
     <rect x="804" y="196" width="220" height="26" rx="5" fill="#fde8ef"/><text x="822" y="215" font-size="14" fill="#be123c">POST /v1/drift</text>
     <rect x="1048" y="196" width="220" height="26" rx="5" fill="#edf2ff"/><text x="1066" y="215" font-size="14" fill="#4f46e5">X-API-Key auth</text>
     <rect x="1292" y="196" width="220" height="26" rx="5" fill="#f8fafc"/><text x="1310" y="215" font-size="14" fill="#475569">Pydantic schemas</text>
+
     <rect x="44" y="282" width="450" height="450" rx="8" fill="#ffffff" stroke="#d7e0ea"/>
     <text x="72" y="324" font-size="25" font-weight="700" fill="#1f2937">API Boundary</text>
     <text x="72" y="354" font-size="15" fill="#64748b">External clients send validated transaction features.</text>
+
     <rect x="76" y="392" width="386" height="96" rx="8" fill="#f8fafc" stroke="#d7e0ea"/>
     <text x="98" y="423" font-size="16" font-weight="700" fill="#334155">Request Validation</text>
     <text x="98" y="453" font-size="14" fill="#64748b">Feature schema, ranges, enums, missing fields</text>
     <text x="98" y="475" font-size="14" fill="#64748b">reject malformed inputs before model runtime</text>
+
     <rect x="76" y="520" width="386" height="96" rx="8" fill="#f8fafc" stroke="#d7e0ea"/>
     <text x="98" y="551" font-size="16" font-weight="700" fill="#334155">Security Controls</text>
     <text x="98" y="581" font-size="14" fill="#64748b">API key authentication, masked customer IDs</text>
     <text x="98" y="603" font-size="14" fill="#64748b">structured errors and environment config</text>
+
     <rect x="76" y="648" width="386" height="48" rx="8" fill="#111827"/>
     <text x="98" y="678" font-family="Consolas, monospace" font-size="15" fill="#d1d5db">{ "decision": "manual_review", "risk_score": 0.57 }</text>
+
     <rect x="574" y="282" width="452" height="450" rx="8" fill="#ffffff" stroke="#d7e0ea"/>
     <text x="602" y="324" font-size="25" font-weight="700" fill="#1f2937">Model Serving Pipeline</text>
     <text x="602" y="354" font-size="15" fill="#64748b">Deterministic runtime modules shared by API and batch jobs.</text>
+
     <rect x="626" y="394" width="348" height="56" rx="8" fill="#e7f6f3" stroke="#b7e1d9"/>
     <text x="652" y="429" font-size="16" font-weight="700" fill="#0f766e">Feature Transformer</text>
     <line x1="800" y1="450" x2="800" y2="486" stroke="#94a3b8" stroke-width="3"/>
     <polygon points="800,502 790,486 810,486" fill="#94a3b8"/>
+
     <rect x="626" y="502" width="348" height="56" rx="8" fill="#edf2ff" stroke="#c7d2fe"/>
     <text x="652" y="537" font-size="16" font-weight="700" fill="#4f46e5">Model Runtime</text>
     <line x1="800" y1="558" x2="800" y2="594" stroke="#94a3b8" stroke-width="3"/>
     <polygon points="800,610 790,594 810,594" fill="#94a3b8"/>
+
     <rect x="626" y="610" width="348" height="56" rx="8" fill="#fff4d8" stroke="#f1d58d"/>
     <text x="652" y="645" font-size="16" font-weight="700" fill="#8a5a10">Threshold Decision Policy</text>
+
     <rect x="1070" y="282" width="486" height="450" rx="8" fill="#ffffff" stroke="#d7e0ea"/>
     <text x="1098" y="324" font-size="25" font-weight="700" fill="#1f2937">Persistence and Monitoring</text>
     <text x="1098" y="354" font-size="15" fill="#64748b">Operational artifacts stay outside the prompt and model code.</text>
+
     <rect x="1102" y="392" width="404" height="82" rx="8" fill="#f8fafc" stroke="#d7e0ea"/>
     <text x="1124" y="424" font-size="16" font-weight="700" fill="#334155">SQLite Prediction Log</text>
     <text x="1124" y="452" font-size="14" fill="#64748b">request id, timestamp, score, decision, top factors</text>
+
     <rect x="1102" y="500" width="404" height="82" rx="8" fill="#f8fafc" stroke="#d7e0ea"/>
     <text x="1124" y="532" font-size="16" font-weight="700" fill="#334155">Model Registry JSON</text>
     <text x="1124" y="560" font-size="14" fill="#64748b">active version, coefficients, thresholds, metrics</text>
+
     <rect x="1102" y="608" width="404" height="82" rx="8" fill="#f8fafc" stroke="#d7e0ea"/>
     <text x="1124" y="640" font-size="16" font-weight="700" fill="#334155">PSI Drift Report</text>
     <text x="1124" y="668" font-size="14" fill="#64748b">reference vs current feature distributions</text>
+
     <line x1="494" y1="506" x2="574" y2="506" stroke="#64748b" stroke-width="4"/>
     <polygon points="574,506 558,496 558,516" fill="#64748b"/>
     <line x1="1026" y1="506" x2="1070" y2="506" stroke="#64748b" stroke-width="4"/>
     <polygon points="1070,506 1054,496 1054,516" fill="#64748b"/>
+
     <rect x="44" y="774" width="1512" height="82" rx="8" fill="#0f172a"/>
     <text x="72" y="807" font-size="16" font-weight="700" fill="#ffffff">Senior engineering signal</text>
     <text x="72" y="835" font-size="15" fill="#cbd5e1">Versioned REST API | reusable feature contract | online and batch inference | audit logging | drift utilities | Docker packaging | unit-tested service modules</text>
   </g>
 </svg>
-"""
-    target = ROOT / "outputs" / "api_architecture_mockup.svg"
-    target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(svg, encoding="utf-8")
-
-
-def main() -> None:
-    build_model_registry()
-    reference_rows = [risk_record(i, high_risk=RNG.random() < 0.18) for i in range(1, 501)]
-    batch_rows = [risk_record(i, high_risk=RNG.random() < 0.30) for i in range(1001, 1041)]
-    write_csv(ROOT / "data" / "reference_features.csv", reference_rows)
-    write_csv(ROOT / "data" / "batch_scoring_input.csv", batch_rows)
-    build_mockup()
-    print("Generated model registry, reference features, batch input, and dashboard mockup.")
-
-
-if __name__ == "__main__":
-    main()

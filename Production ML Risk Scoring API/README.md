@@ -62,7 +62,7 @@ Production ML Risk Scoring API/
     deployment.md
     model_card.md
   outputs/
-    api_observability_mockup.svg
+    api_architecture_mockup.svg
   scripts/
     generate_assets.py
     run_batch_score.py
@@ -156,7 +156,6 @@ Python, FastAPI, Pydantic, SQLite, Docker, Docker Compose, pytest, deterministic
 - Added batch scoring and drift monitoring utilities that represent common MLOps production workflows.
 - Packaged the service with Docker, documentation, and tests so it can be reviewed as an engineering system rather than a notebook.
 
-## API Observability Mockup
+## API Architecture Mockup
 
-![API observability mockup](outputs/api_observability_mockup.svg)
-
+![API architecture mockup](outputs/api_architecture_mockup.svg)
