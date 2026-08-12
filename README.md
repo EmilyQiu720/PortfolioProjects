@@ -79,6 +79,24 @@ It includes:
 
 This project demonstrates frontend skills for ML products: React components, TypeScript contracts, API integration, dashboard UX, responsive layout, data visualization, and operational monitoring workflows.
 
+### Reinforcement Learning Dynamic Pricing Lab
+
+[`Reinforcement Learning Dynamic Pricing Lab`](./Reinforcement%20Learning%20Dynamic%20Pricing%20Lab) is a reproducible reinforcement learning project for optimizing dynamic pricing decisions under demand uncertainty, inventory constraints, competitor pricing, and price stability requirements.
+
+The project includes:
+
+- Custom finite-horizon Markov decision process for pricing
+- Discrete state representation for inventory, price, competitor position, seasonality, and selling horizon
+- Five price adjustment actions from large discount to large increase
+- Business-aware reward function balancing profit, stockout risk, early inventory depletion, and price volatility
+- Baseline policies including fixed price, random, rule-based, and myopic greedy strategies
+- Tabular Q-learning with epsilon-greedy exploration and conservative pricing guardrails
+- Multi-seed evaluation with mean reward, profit, revenue, stockout rate, price volatility, final inventory, and confidence intervals
+- Generated artifacts for policy comparison, training curve, learned policy heatmap, and portfolio preview
+- Unit tests for environment transitions, baseline policies, and learned policy evaluation
+
+This project demonstrates senior reinforcement learning and decision science skills: MDP design, reward shaping, baseline discipline, constrained policy learning, simulation-based evaluation, uncertainty reporting, and business metric tradeoff analysis.
+
 ### FP&A Scenario Planning Model in Excel
 
 [`FP&A Scenario Planning Model in Excel`](./FP%26A%20Scenario%20Planning%20Model%20in%20Excel) is an executive-ready SaaS financial planning workbook for revenue forecasting, scenario planning, cash runway, sensitivity analysis, and FP&A dashboard reporting.
