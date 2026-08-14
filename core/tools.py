@@ -106,3 +106,40 @@ TOOLS = {
         required_args=["expression"],
     ),
 }
+
+
+def list_tools():
+    """Return a readable list of tools the agent is allowed to use.
+
+    Input:
+    - No input.
+
+    Output:
+    - A list of strings.
+    - Each string explains one tool's name, required arguments, and description.
+    """
+
+    # CHANGED: this helper turns the tool registry into a "tool menu".
+    # Real agents put information like this into the model context so the
+    # model knows which tools exist and how to call them.
+    tool_lines = []
+
+    # Read every Tool object from the registry.
+    # tool_name is the dictionary key, such as "calculate".
+    # tool is the Tool object that stores description and required arguments.
+    for tool_name, tool in TOOLS.items():
+        # If the tool has required arguments, show them as comma-separated text.
+        # Example: ["expression"] becomes "expression".
+        if tool.required_args:
+            args_text = ", ".join(tool.required_args)
+        else:
+            # If the list is empty, this tool can be called with no arguments.
+            args_text = "none"
+
+        # Build one readable line for this tool.
+        # Example:
+        # - calculate(args: expression): Calculate a simple arithmetic expression.
+        tool_lines.append(f"- {tool_name}(args: {args_text}): {tool.description}")
+
+    # Give the caller the full tool menu.
+    return tool_lines

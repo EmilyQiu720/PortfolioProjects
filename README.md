@@ -221,8 +221,8 @@ Note:
 
 ```text
 CHANGED in the latest lesson:
-Tool execution now lives in execute_tool_call(...).
-Unknown tool names now return a clear error instead of crashing the program.
+Added a tool menu with list_tools().
+Added a CLI inspection command: python app/cli.py --tools
 ```
 
 Current runnable demo:
@@ -231,6 +231,7 @@ Current runnable demo:
 python app/cli.py "what time is it?"
 python app/cli.py "calculate 127*83"
 python app/cli.py "unknown tool"
+python app/cli.py --tools
 ```
 
 Current flow:
@@ -247,5 +248,5 @@ user message
 Next step:
 
 ```text
-Explain Phase 1 line by line, then improve the tool system.
+Use the tool menu as context, so the agent loop looks closer to a real LLM agent.
 ```

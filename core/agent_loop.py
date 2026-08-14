@@ -13,7 +13,6 @@ def execute_tool_call(tool_name, tool_args):
     - A string containing either the tool result or a clear error message.
     """
 
-    # CHANGED: tool execution now has its own function.
     # This keeps run_agent() focused on the loop, while this function handles
     # tool lookup, unknown-tool errors, and actual execution.
 
