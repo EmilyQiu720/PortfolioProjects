@@ -2,6 +2,36 @@ from core.messages import Message
 from core.tools import TOOLS
 
 
+def execute_tool_call(tool_name, tool_args):
+    """Find and run a tool requested by the model.
+
+    Input:
+    - tool_name: the name of the tool the model wants to call.
+    - tool_args: a dictionary of arguments for that tool.
+
+    Output:
+    - A string containing either the tool result or a clear error message.
+    """
+
+    # CHANGED: tool execution now has its own function.
+    # This keeps run_agent() focused on the loop, while this function handles
+    # tool lookup, unknown-tool errors, and actual execution.
+
+    # Check whether the requested tool exists in the registry.
+    # This protects the agent from crashing if the model invents a tool name.
+    if tool_name not in TOOLS:
+        return f"Error: unknown tool '{tool_name}'."
+
+    # Find the Tool object from the tool registry.
+    # Example: "get_time" becomes Tool(name="get_time", ...).
+    tool = TOOLS[tool_name]
+
+    # Run the tool with the arguments chosen by the model.
+    # **tool_args means:
+    # turn {"expression": "127*83"} into calculate(expression="127*83").
+    return tool.run(**tool_args)
+
+
 def fake_model(messages):
     """Pretend to be a model that decides the next agent action.
 
@@ -46,6 +76,11 @@ def fake_model(messages):
             expression = latest_lower.replace("calculate", "").strip()
             return {"type": "tool_call", "tool": "calculate", "args": {"expression": expression}}
 
+        # This branch exists only for learning and testing.
+        # It lets us see what happens when the model asks for a tool that does not exist.
+        if "unknown tool" in latest_lower:
+            return {"type": "tool_call", "tool": "missing_tool", "args": {}}
+
     # If no tool is needed, or a tool result is already available,
     # the fake model returns a final answer.
     return {"type": "answer", "text": f"My answer based on the current context:\n{latest}"}
@@ -85,20 +120,14 @@ def run_agent(user_input, max_steps=5):
             tool_name = decision["tool"]
             tool_args = decision["args"]
 
-            # CHANGED: record the model's tool call as an assistant message.
             # Real agent frameworks keep this step in history:
             # user -> assistant(tool_call) -> tool_result -> assistant(answer).
             # This makes the trace easier to inspect and closer to real tool calling.
             messages.append(Message(role="assistant", content=f"tool_call: {tool_name} args={tool_args}"))
 
-            # Find the Tool object from the tool registry.
-            # Example: "get_time" becomes Tool(name="get_time", ...).
-            tool = TOOLS[tool_name]
-
-            # Run the tool with the arguments chosen by the model.
-            # **decision["args"] means:
-            # turn {"expression": "127*83"} into calculate(expression="127*83").
-            result = tool.run(**tool_args)
+            # Ask the tool execution helper to find and run the tool.
+            # If the tool name is unknown, this returns an error string instead of crashing.
+            result = execute_tool_call(tool_name, tool_args)
 
             # Save the raw tool result in the message history.
             messages.append(Message(role="tool_result", content=f"{tool_name}: {result}"))

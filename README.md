@@ -221,8 +221,8 @@ Note:
 
 ```text
 CHANGED in the latest lesson:
-The agent now records assistant tool_call messages before running tools.
-The trace is now: user -> assistant(tool_call) -> tool_result -> assistant(answer).
+Tool execution now lives in execute_tool_call(...).
+Unknown tool names now return a clear error instead of crashing the program.
 ```
 
 Current runnable demo:
@@ -230,6 +230,7 @@ Current runnable demo:
 ```bash
 python app/cli.py "what time is it?"
 python app/cli.py "calculate 127*83"
+python app/cli.py "unknown tool"
 ```
 
 Current flow:
