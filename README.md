@@ -54,7 +54,8 @@ agent-lab/
   core/
     agent_loop.py
     messages.py
-    model_client.py
+    model.py
+    session.py
     tools.py
     context.py
     state.py
@@ -119,6 +120,8 @@ Files:
 - `core/agent_loop.py`
 - `core/tools.py`
 - `core/messages.py`
+- `core/model.py`
+- `core/session.py`
 - `app/cli.py`
 
 ### Phase 2: Tool System
@@ -154,6 +157,7 @@ Concepts:
 
 Files:
 
+- `core/model.py`
 - `core/model_client.py`
 
 ### Phase 4: Messages and Context
@@ -201,7 +205,7 @@ Agent Lab tools.py
 Agent Lab messages.py
 -> Pi AgentMessage
 
-Agent Lab session_store.py
+Agent Lab session.py / session_store.py
 -> Pi SessionManager
 
 Agent Lab compaction.py
@@ -221,8 +225,9 @@ Note:
 
 ```text
 CHANGED in the latest lesson:
-Added context construction with core/context.py.
-The agent now starts with a system message that contains instructions and the tool menu.
+Split fake model decision logic into core/model.py.
+Added structured ToolResult objects for tool success/error handling.
+Added AgentSession for session id, created time, messages, and step count.
 ```
 
 Current runnable demo:
@@ -232,6 +237,7 @@ python app/cli.py "what time is it?"
 python app/cli.py "calculate 127*83"
 python app/cli.py "unknown tool"
 python app/cli.py --tools
+python app/cli.py --debug-session "calculate 127*83"
 ```
 
 Current flow:
@@ -239,15 +245,16 @@ Current flow:
 ```text
 user message
 -> context builder adds system instructions and tool descriptions
--> fake model decides whether to call a tool
+-> AgentSession stores messages and run metadata
+-> model layer decides whether to call a tool
 -> assistant message records the tool_call
 -> tool runs
--> tool_result is added back into messages
--> fake model answers from the updated context
+-> structured ToolResult is converted into a tool_result message
+-> model layer answers from the updated context
 ```
 
 Next step:
 
 ```text
-Use the tool menu as context, so the agent loop looks closer to a real LLM agent.
+Add basic tests so every lesson has a safety net.
 ```

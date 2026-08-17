@@ -12,7 +12,6 @@ def build_system_prompt():
     - A string that will become the system message content.
     """
 
-    # CHANGED: this is our first real "context construction" function.
     # Context construction means: collect useful information before the model thinks.
 
     # Ask the tool registry for a readable list of available tools.

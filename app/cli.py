@@ -8,7 +8,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 # This lets app/cli.py import files from the core/ folder.
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from core.agent_loop import run_agent
+from core.agent_loop import run_agent, run_agent_session
 from core.messages import show_messages
 from core.tools import list_tools
 
@@ -36,6 +36,26 @@ def main():
             print(line)
 
         # Stop here because "--tools" is only inspection, not an agent run.
+        return
+
+    # CHANGED: "--debug-session" shows the session object concept in the terminal.
+    # This is useful for learning because session metadata is normally hidden inside code.
+    if len(sys.argv) > 1 and sys.argv[1] == "--debug-session":
+        # Everything after "--debug-session" is treated as the user's actual prompt.
+        user_input = " ".join(sys.argv[2:]) or "what time is it?"
+
+        # Run the richer session version so we can inspect metadata.
+        session = run_agent_session(user_input)
+
+        # Print the same message trace as the normal CLI.
+        show_messages(session.messages)
+
+        # Print session metadata after the trace.
+        print(f"session_id: {session.session_id}")
+        print(f"created_at: {session.created_at}")
+        print(f"step_count: {session.step_count}")
+
+        # Stop here because the debug command already ran the agent.
         return
 
     # Read the user's text from the command line.

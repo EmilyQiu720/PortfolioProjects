@@ -4,6 +4,45 @@ from typing import Callable
 
 
 @dataclass
+class ToolResult:
+    """The structured result returned by a tool call.
+
+    Input fields:
+    - ok: True means the tool worked. False means the tool failed.
+    - content: the useful output when the tool worked.
+    - error: the error explanation when the tool failed.
+
+    Output:
+    - A ToolResult object that the agent loop can inspect safely.
+    """
+
+    ok: bool
+    content: str
+    error: str | None = None
+
+    def to_message_text(self):
+        """Convert a ToolResult into text for the message history.
+
+        Input:
+        - No input. The function reads this ToolResult object.
+
+        Output:
+        - A string that can be stored inside a Message.
+        """
+
+        # CHANGED: tool results are now structured, but messages still need text.
+        # This method is the bridge from structured Python object to readable trace.
+
+        # If the tool worked, the message should show the useful content.
+        if self.ok:
+            return self.content
+
+        # If the tool failed, prefer the error field.
+        # The "or" fallback protects us if someone forgets to set error.
+        return self.error or "Error: tool failed without an error message."
+
+
+@dataclass
 class Tool:
     """A tool definition that the agent can call.
 
@@ -30,7 +69,7 @@ class Tool:
         - Example: {"expression": "127*83"}
 
         Output:
-        - Whatever the underlying function returns.
+        - A ToolResult object.
         """
 
         # Check required arguments before running the tool.
@@ -40,10 +79,22 @@ class Tool:
             # If a required argument is missing, return a clear error message.
             # This keeps the agent from crashing when the model makes a bad tool call.
             if arg_name not in kwargs:
-                return f"Error: missing required argument '{arg_name}'."
+                return ToolResult(
+                    ok=False,
+                    content="",
+                    error=f"Error: missing required argument '{arg_name}'.",
+                )
 
         # Run the actual Python function only after validation passes.
-        return self.function(**kwargs)
+        raw_result = self.function(**kwargs)
+
+        # If the tool function returns an error string, mark the ToolResult as failed.
+        # This gives the agent a real success/failure flag instead of guessing later.
+        if raw_result.startswith("Error:"):
+            return ToolResult(ok=False, content="", error=raw_result)
+
+        # Wrap the raw string in ToolResult so the agent can tell success from failure.
+        return ToolResult(ok=True, content=raw_result)
 
 
 def get_time():
