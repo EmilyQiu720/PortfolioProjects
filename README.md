@@ -95,6 +95,7 @@ agent-lab/
     ui.py
   examples/
   tests/
+    test_agent_loop.py
   README.md
 ```
 
@@ -191,6 +192,14 @@ After the core loop is clear, we will add:
 - evaluation and observability
 - skills, templates, and extensions
 
+## Tests
+
+Run the current safety checks with:
+
+```bash
+python -m unittest discover tests
+```
+
 ## How This Maps to Pi
 
 This project will be compared with Pi as it grows:
@@ -225,9 +234,8 @@ Note:
 
 ```text
 CHANGED in the latest lesson:
-Split fake model decision logic into core/model.py.
-Added structured ToolResult objects for tool success/error handling.
-Added AgentSession for session id, created time, messages, and step count.
+Added tests/test_agent_loop.py.
+Covered direct answers, tool success, tool errors, unknown tools, and session metadata.
 ```
 
 Current runnable demo:
@@ -256,5 +264,5 @@ user message
 Next step:
 
 ```text
-Add basic tests so every lesson has a safety net.
+Add the first persistent session store.
 ```

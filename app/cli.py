@@ -38,7 +38,7 @@ def main():
         # Stop here because "--tools" is only inspection, not an agent run.
         return
 
-    # CHANGED: "--debug-session" shows the session object concept in the terminal.
+    # "--debug-session" shows the session object concept in the terminal.
     # This is useful for learning because session metadata is normally hidden inside code.
     if len(sys.argv) > 1 and sys.argv[1] == "--debug-session":
         # Everything after "--debug-session" is treated as the user's actual prompt.

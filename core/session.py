@@ -38,7 +38,7 @@ class AgentSession:
         - An AgentSession with initial system and user messages already loaded.
         """
 
-        # CHANGED: session creation now owns the initial message setup.
+        # Session creation owns the initial message setup.
         # This keeps run_agent() focused on running the loop, not preparing state.
 
         # Create a session object with id, timestamp, and empty messages.

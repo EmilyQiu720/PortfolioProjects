@@ -12,7 +12,7 @@ def choose_next_action(messages):
       {"type": "answer", "text": answer_text}
     """
 
-    # CHANGED: model decision logic now lives in its own model layer.
+    # Model decision logic now lives in its own model layer.
     # Later, this is where we can replace fake keyword logic with a real LLM call.
 
     # Look at the newest message.

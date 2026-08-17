@@ -30,7 +30,7 @@ class ToolResult:
         - A string that can be stored inside a Message.
         """
 
-        # CHANGED: tool results are now structured, but messages still need text.
+        # Tool results are now structured, but messages still need text.
         # This method is the bridge from structured Python object to readable trace.
 
         # If the tool worked, the message should show the useful content.

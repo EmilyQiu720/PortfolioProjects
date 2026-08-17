@@ -47,7 +47,7 @@ def run_agent_session(user_input, max_steps=5):
     - An AgentSession containing metadata and the full message history.
     """
 
-    # CHANGED: session now owns messages plus run metadata like id and step count.
+    # Session owns messages plus run metadata like id and step count.
     # This is the first version of "agent state/session" in the project.
     session = AgentSession.create(user_input)
 
