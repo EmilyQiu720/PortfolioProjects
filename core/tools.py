@@ -119,7 +119,7 @@ def list_tools():
     - Each string explains one tool's name, required arguments, and description.
     """
 
-    # CHANGED: this helper turns the tool registry into a "tool menu".
+    # This helper turns the tool registry into a "tool menu".
     # Real agents put information like this into the model context so the
     # model knows which tools exist and how to call them.
     tool_lines = []

@@ -24,7 +24,7 @@ def main():
     - Nothing is returned. The function prints the agent messages.
     """
 
-    # CHANGED: "--tools" is a tiny learning command that prints the tool menu.
+    # "--tools" is a tiny learning command that prints the tool menu.
     # This helps us see what a real model would be shown before choosing tools.
     if len(sys.argv) > 1 and sys.argv[1] == "--tools":
         # Ask the tool registry to describe every available tool.

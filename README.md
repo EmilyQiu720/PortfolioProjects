@@ -221,8 +221,8 @@ Note:
 
 ```text
 CHANGED in the latest lesson:
-Added a tool menu with list_tools().
-Added a CLI inspection command: python app/cli.py --tools
+Added context construction with core/context.py.
+The agent now starts with a system message that contains instructions and the tool menu.
 ```
 
 Current runnable demo:
@@ -238,6 +238,7 @@ Current flow:
 
 ```text
 user message
+-> context builder adds system instructions and tool descriptions
 -> fake model decides whether to call a tool
 -> assistant message records the tool_call
 -> tool runs

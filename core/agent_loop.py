@@ -1,3 +1,4 @@
+from core.context import build_initial_messages
 from core.messages import Message
 from core.tools import TOOLS
 
@@ -96,8 +97,11 @@ def run_agent(user_input, max_steps=5):
     - messages: the full conversation history produced during this run.
     """
 
-    # Start the conversation history with the user's first message.
-    messages = [Message(role="user", content=user_input)]
+    # CHANGED: build the starting history through the context builder.
+    # The agent now starts with:
+    # 1. a system message containing instructions and tool descriptions
+    # 2. the user's actual message
+    messages = build_initial_messages(user_input)
 
     # This is the Agent Loop.
     # It lets the agent think, call tools, observe results, and think again.
